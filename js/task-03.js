@@ -13,10 +13,12 @@ const images = [
   },
 ];
 
+const imagesGallery = document.querySelector('gallery');
 
 const elements = images.map(({ url, alt }) => {
-    const markup = ` <li><img class="image" src= ${url} alt= ${alt} width=400 /></li> `;
+  const markup = ` <li><img class="image" src= ${url} alt= ${alt} width=400 /></li> `;
     return markup;
   })
   .join("");
 
+imagesGallery.insertAdjacentHTML("beforeend", markup);
