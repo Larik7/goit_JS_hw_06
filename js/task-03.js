@@ -13,7 +13,11 @@ const images = [
   },
 ];
 
-const imagesGallery = document.querySelector('gallery');
+const imagesGallery = document.querySelector('.gallery');
+
+imagesGallery.style.display = 'flex';
+imagesGallery.style.listStyle = 'none';
+imagesGallery.style.gap = '20px';
 
 const elements = images.map(({ url, alt }) => {
   const markup = ` <li><img class="image" src= ${url} alt= ${alt} width=400 /></li> `;
@@ -21,4 +25,4 @@ const elements = images.map(({ url, alt }) => {
   })
   .join("");
 
-imagesGallery.insertAdjacentHTML("beforeend", markup);
+imagesGallery.insertAdjacentHTML("beforeend", elements);
